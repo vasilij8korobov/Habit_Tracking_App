@@ -4,6 +4,10 @@ from .validators import validate_habit_fields
 
 
 class HabitSerializer(serializers.ModelSerializer):
+    time_to_complete = serializers.IntegerField(
+        help_text="Время на выполнение в секундах (макс. 120)"
+    )
+
     class Meta:
         model = Habit
         fields = '__all__'
